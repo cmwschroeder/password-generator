@@ -29,5 +29,37 @@ function generatePassword() {
     return "";
   }
 
+  var useLower, useUpper, useNum, useSpec;
+
+  if(confirm("Would you like lowercase letters in your password?")) {
+    useLower = true;
+  } else {
+    useLower = false;
+  }
+
+  if(confirm("Would you like uppercase letters in your password?")) {
+    useUpper = true;
+  } else {
+    useUpper = false;
+  }
+
+  if(confirm("Would you like numbers in your password?")) {
+    useNum = true;
+  } else {
+    useNum = false;
+  }
+
+  if(confirm("Would you like special characters in your password?")) {
+    useSpec = true;
+  } else {
+    useSpec = false;
+  }
+
+  if(!useLower && !useUpper && !useNum && !useSpec) {
+    alert("Must use at least one character type");
+    return "";
+  }
+
+
   return "newPassword";
 }

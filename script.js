@@ -22,6 +22,9 @@ function generatePassword() {
   var nums = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   var spec = [" ", "!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|",
    "}", "~"];
+   var possibleChars = [];
+
+   var i = 0;
 
 
   if(passLength == null || passLength == "") {
@@ -68,6 +71,29 @@ function generatePassword() {
     return "";
   }
 
+  if(useLower) {
+    for(i = 0; i < lowerCase.length; i++) {
+      possibleChars[possibleChars.length] = lowerCase[i];
+    }
+  }
+
+  if(useUpper) {
+    for(i = 0; i < upperCase.length; i++) {
+      possibleChars[possibleChars.length] = upperCase[i];
+    }
+  }
+
+  if(useNum) {
+    for(i = 0; i < nums.length; i++) {
+      possibleChars[possibleChars.length] = nums[i];
+    }
+  }
+
+  if(useSpec) {
+    for(i = 0; i < spec.length; i++) {
+      possibleChars[possibleChars.length] = spec[i];
+    }
+  }
 
   return newPass.join("");
 }

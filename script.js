@@ -171,7 +171,14 @@ function generatePassword() {
     }   
   }
 
-
+//filling the rest of the password with random characters of the selected criteria
+for(i = 0; i < newPass.length; i++) {
+  //checks to make sure that this spot isn't already filled
+  if(!charSpots.includes(i)) {
+    selectChar = Math.floor(Math.random() * possibleChars.length);
+    newPass[i] = possibleChars[selectChar];
+  }
+}
 
   return newPass.join("");
 }

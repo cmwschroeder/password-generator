@@ -33,7 +33,9 @@ function generatePassword() {
    // Initializing an incrementor for the for loops
    var i = 0;
 
-
+   //checks to make sure the prompt for length of new password was inputted correctly
+   //includes checking if prompt was inputted and making sure it was a number. If these
+   //checks are passed then it makes sure the number is in the range of 8 - 128
   if(passLength == null || passLength == "") {
     alert("Nothing was entered")
     return "";
@@ -47,55 +49,72 @@ function generatePassword() {
     return "";
   }
 
+  // Initializes booleans to determine what character types are used
   var useLower, useUpper, useNum, useSpec;
 
+  // Asks the user if lowercase is included
   if(confirm("Would you like lowercase letters in your password?")) {
     useLower = true;
   } else {
     useLower = false;
   }
 
+  // Asks the user if uppercase is included
   if(confirm("Would you like uppercase letters in your password?")) {
     useUpper = true;
   } else {
     useUpper = false;
   }
 
+  // Asks the user if numbers are included
   if(confirm("Would you like numbers in your password?")) {
     useNum = true;
   } else {
     useNum = false;
   }
 
+  // Asks the user if special characters are included
   if(confirm("Would you like special characters in your password?")) {
     useSpec = true;
   } else {
     useSpec = false;
   }
 
+  // Makes sure at least one character type was included
   if(!useLower && !useUpper && !useNum && !useSpec) {
     alert("Must use at least one character type");
     return "";
   }
 
+  // Populates the array that will hold possible characters that could be in the
+  // new password
+
+  // If lowercase letters are to be included in the new password then adds them to 
+  // possible character array
   if(useLower) {
     for(i = 0; i < lowerCase.length; i++) {
       possibleChars[possibleChars.length] = lowerCase[i];
     }
   }
 
+  // If uppercase letters are to be included in the new password then adds them to 
+  // possible character array
   if(useUpper) {
     for(i = 0; i < upperCase.length; i++) {
       possibleChars[possibleChars.length] = upperCase[i];
     }
   }
 
+  // If numbers are to be included in the new password then adds them to 
+  // possible character array
   if(useNum) {
     for(i = 0; i < nums.length; i++) {
       possibleChars[possibleChars.length] = nums[i];
     }
   }
 
+  // If special characters are to be included in the new password then adds them to 
+  // possible character array
   if(useSpec) {
     for(i = 0; i < spec.length; i++) {
       possibleChars[possibleChars.length] = spec[i];

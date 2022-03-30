@@ -23,10 +23,10 @@ https://cmwschroeder.github.io/password-generator/
 Page when opened: 
 ![Page with not changes](https://github.com/cmwschroeder/password-generator/blob/main/assets/images/screenshot-default.png)
 
-Prompt for length:
+Prompt for length:  
 ![Length prompt box](https://github.com/cmwschroeder/password-generator/blob/main/assets/images/screenshot-length-prompt.png)
 
-Confirmation for characters:
+Confirmation for characters:  
 ![Character type selector box](https://github.com/cmwschroeder/password-generator/blob/main/assets/images/screenshot-char-include.png)
 
 Password displayed:
